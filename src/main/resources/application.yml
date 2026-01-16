@@ -1,0 +1,25 @@
+server:
+  # 애플리케이션 포트
+  port: 19090
+
+# 스프링 애플리케이션 설정
+spring:
+  application:
+    # 애플리케이션 이름
+    name: ghcr-demo
+
+# GitHub 컨테이너 레지스트리 설정
+github:
+  container-registry:
+    # GHCR API 기본 URL
+    url: https://ghcr.io/v2
+    # 요청 타임아웃(ms)
+    timeout: 30000
+
+# 로깅 레벨 설정
+logging:
+  level:
+    # 프로젝트 패키지 로깅 레벨
+    com.example.ghcrdemo: DEBUG
+    # WebClient 관련 로깅 레벨
+    org.springframework.web.reactive.function.client: DEBUG

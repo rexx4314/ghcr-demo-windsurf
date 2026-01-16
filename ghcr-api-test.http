@@ -1,0 +1,39 @@
+### Health 체크
+GET {{host}}/api/ghcr/health
+Accept: text/plain
+
+### 동기: 전체 레포지토리 카탈로그 조회
+POST {{host}}/api/ghcr/repositories
+Content-Type: application/json
+
+{
+  "username": "{{username}}",
+  "token": "{{token}}"
+}
+
+### 동기: 특정 레포지토리 태그 조회 (간단한 이름)
+POST {{host}}/api/ghcr/repositories/{{repo}}/tags
+Content-Type: application/json
+
+{
+  "username": "{{username}}",
+  "token": "{{token}}"
+}
+
+### 비동기: 전체 레포지토리 카탈로그 조회
+POST {{host}}/api/ghcr/async/repositories
+Content-Type: application/json
+
+{
+  "username": "{{username}}",
+  "token": "{{token}}"
+}
+
+### 비동기: 특정 레포지토리 태그 조회
+POST {{host}}/api/ghcr/async/repositories/{{repo}}/tags
+Content-Type: application/json
+
+{
+  "username": "{{username}}",
+  "token": "{{token}}"
+}
